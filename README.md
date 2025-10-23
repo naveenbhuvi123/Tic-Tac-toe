@@ -2,7 +2,7 @@
 
 A modern, responsive implementation of the classic Tic-Tac-Toe game built with HTML, CSS, and vanilla JavaScript.
 
-![Game Preview](preview.png)
+![Game Preview] https://tic-tac-toe-swart-one-ssxrkqzf2e.vercel.app/
 
 ## Features
 
