@@ -1,0 +1,137 @@
+/* Animation keyframes */
+@keyframes popIn {
+    0% { transform: scale(0); opacity: 0; }
+    70% { transform: scale(1.1); }
+    100% { transform: scale(1); opacity: 1; }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes bounce {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+}
+
+body{
+    margin: 0px;
+    font-family:sans-serif;
+    padding: 10px;
+    background: hsla(141, 54%, 86%, 1);
+    background: linear-gradient(90deg, hsla(141, 54%, 86%, 1) 0%, hsla(333, 73%, 85%, 1) 50%, hsla(211, 58%, 79%, 1) 100%);
+}
+
+.game-container{
+    display: flex;
+    flex-direction: column;
+    justify-content:center;
+    align-items: center;
+}
+.heading {
+    font-size:37px;
+    text-align: center;
+    color: #231919;
+    font-style:oblique;
+}
+.msg{
+    font-size:30px;
+}
+
+.boxes-container{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 70vmin;
+    align-items: center;
+    gap: 2vmin;margin: 4vmin;
+
+}
+.box{
+    flex-direction: column;
+    width: 20vmin;
+    height: 20vmin;
+    border-radius: 2vmin;
+    border-style: none;
+    font-size: 15vmin;
+    color: blue;
+    align-items: center;
+    justify-content: center;
+    background: grey;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    transform: scale(1);
+}
+
+.box:hover{
+    box-shadow: -2px 3px 78px -14px rgba(207,187,187,0.75);
+    -webkit-box-shadow: -2px 3px 78px -14px rgba(207,187,187,0.75);
+    -moz-box-shadow: -2px 3px 78px -14px rgba(207,187,187,0.75);
+    transform: scale(1.05);
+    background: #7a7a7a;
+}
+
+.box:active {
+    transform: scale(0.95);
+}
+
+/* Animation for X and O appearing */
+.box.played {
+    animation: popIn 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.btn {
+    min-width: 20vmin;
+    padding: 3vmin;
+    border-style: none;
+    margin: 5px;
+    border-radius: 10px;
+    background-color: red;
+    color: whitesmoke;
+    font-size: 17px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+.btn:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+.reset-button {
+    background: rgb(14, 95, 122);
+    color: white;
+    animation: bounce 2s infinite ease-in-out;
+}
+.hide{
+    text-align:center ;
+    display: none;
+    animation: fadeIn 0.5s ease-out;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 2rem;
+    border-radius: 1rem;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+.winner-anouncement{
+    text-align: center;
+}
+
+
+.winner-anouncement .msg {
+    animation: bounce 1s ease-out;
+    margin-bottom: 1rem;
+}
+
+.colorOfO {
+    color: red;
+    animation: popIn 0.3s ease-out;
+}
